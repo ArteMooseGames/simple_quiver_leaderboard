@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://da2ach0s0nlkd"]
+
+[ext_resource type="Texture2D" uid="uid://dd7fw3ca5capk" path="res://assets/ui/button_square_depth_gradient_green.png" id="1_xxo27"]
+[ext_resource type="Texture2D" uid="uid://c7viam0arke0f" path="res://assets/ui/button_square_flat_green.png" id="2_aaoj0"]
+[ext_resource type="Script" path="res://scripts/menu_button.gd" id="3_xji03"]
+[ext_resource type="FontFile" uid="uid://do2n7ob344tj8" path="res://assets/fonts/Kenney Future.ttf" id="4_6kj2c"]
+
+[node name="MenuButton" type="TextureButton"]
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+keep_pressed_outside = true
+texture_normal = ExtResource("1_xxo27")
+texture_pressed = ExtResource("2_aaoj0")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_xji03")
+font_size = 48
+
+[node name="ButtonLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_6kj2c")
+text = "START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

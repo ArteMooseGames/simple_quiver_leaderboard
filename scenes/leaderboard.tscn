@@ -1,0 +1,176 @@
+[gd_scene load_steps=8 format=3 uid="uid://cixv2iktryent"]
+
+[ext_resource type="Texture2D" uid="uid://c7viam0arke0f" path="res://assets/ui/button_square_flat_green.png" id="1_8jrql"]
+[ext_resource type="Script" path="res://scripts/leaderboard.gd" id="1_j6pks"]
+[ext_resource type="FontFile" uid="uid://do2n7ob344tj8" path="res://assets/fonts/Kenney Future.ttf" id="2_ovn4o"]
+[ext_resource type="Texture2D" uid="uid://4qh6xoqi1b3u" path="res://assets/ui/button_square_border_green.png" id="2_t5p5a"]
+[ext_resource type="PackedScene" uid="uid://bftrmbntodg1y" path="res://scenes/leaderboard_row.tscn" id="3_yjlcd"]
+[ext_resource type="PackedScene" uid="uid://da2ach0s0nlkd" path="res://scenes/menu_button.tscn" id="4_0ko71"]
+[ext_resource type="Texture2D" uid="uid://bil7uaqfw2mkn" path="res://assets/ui/button_square_gradient_green.png" id="6_vxeq8"]
+
+[node name="Leaderboard" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j6pks")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -16
+
+[node name="TopSection" type="NinePatchRect" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("1_8jrql")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/TopSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TopSection/MarginContainer"]
+layout_mode = 2
+
+[node name="LabelContainer" type="HBoxContainer" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuLabel" type="RichTextLabel" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ovn4o")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "Standings"
+
+[node name="ScoreLabel" type="RichTextLabel" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/LabelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.75
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_ovn4o")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "Your Time: 350.32 s"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeaderboardLabelsLeft" type="VBoxContainer" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Rank1" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsLeft" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+
+[node name="Rank2" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsLeft" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "2 -"
+
+[node name="Rank3" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsLeft" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "3 -"
+
+[node name="Rank4" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsLeft" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "4 -"
+
+[node name="Rank5" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsLeft" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "5 -"
+
+[node name="LeaderboardLabelsRight" type="VBoxContainer" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Rank6" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsRight" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "6 -"
+
+[node name="Rank7" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsRight" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "7 -"
+
+[node name="Rank8" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsRight" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "8 -"
+
+[node name="Rank9" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsRight" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "9 -"
+
+[node name="Rank10" parent="VBoxContainer/TopSection/MarginContainer/VBoxContainer/HBoxContainer/LeaderboardLabelsRight" instance=ExtResource("3_yjlcd")]
+layout_mode = 2
+rank_label_text = "10 -"
+
+[node name="BottomSection" type="NinePatchRect" parent="VBoxContainer"]
+z_index = -1
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_t5p5a")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/BottomSection"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/BottomSection/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="MenuButton" parent="VBoxContainer/BottomSection/MarginContainer/HBoxContainer" instance=ExtResource("4_0ko71")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_pressed = ExtResource("6_vxeq8")
+button_text = "Back"
+font_size = 36
+button_size_x = 250
+button_size_y = 100
+button_label_y_offset = 4
+scene_location = "res://scenes/game.tscn"
+
+[node name="UserInput" type="LineEdit" parent="VBoxContainer/BottomSection/MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_ovn4o")
+theme_override_font_sizes/font_size = 36
+placeholder_text = "Initials (3)"
+max_length = 3
+expand_to_text_length = true
+caret_blink = true
+
+[connection signal="text_submitted" from="VBoxContainer/BottomSection/MarginContainer/HBoxContainer/UserInput" to="." method="_on_user_input_text_submitted"]

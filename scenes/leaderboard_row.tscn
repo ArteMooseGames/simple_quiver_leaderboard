@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://bftrmbntodg1y"]
+
+[ext_resource type="Script" path="res://scripts/leaderboard_row.gd" id="1_c1rrl"]
+[ext_resource type="FontFile" uid="uid://do2n7ob344tj8" path="res://assets/fonts/Kenney Future.ttf" id="1_l6l4a"]
+
+[node name="LeaderboardRow" type="HBoxContainer"]
+custom_minimum_size = Vector2(400, 75)
+offset_right = 564.0
+offset_bottom = 75.0
+theme_override_constants/separation = 10
+alignment = 1
+script = ExtResource("1_c1rrl")
+font_size = 40
+
+[node name="RankLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_l6l4a")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[right]1 -[/right]"
+
+[node name="UserLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_l6l4a")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "___"
+
+[node name="UserTime" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_l6l4a")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "000.00"
