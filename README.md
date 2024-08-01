@@ -1,7 +1,7 @@
 # simple_quiver_leaderboard
 This project is a demonstration of setting up a simple "Top 10" leaderboard for a Godot 4 project (Built in Godot 4.3 beta 3). 
 
-We provide an overview to this project on our [blog](https://blog.artemoosegames.com/). 
+We provide an overview to this project on our [blog](https://open.substack.com/pub/artemoosegames/p/make-a-public-leaderboard-in-godot). 
 
 Steps -
 
